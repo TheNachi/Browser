@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,12 +31,94 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addNewTabs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7xv-EP-e1T"/>
+                                </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sYj-BF-3PW">
+                                <rect key="frame" x="0.0" y="142" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lco-mu-6jl"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c8F-sr-ftC">
+                                    <size key="itemSize" width="88" height="34"/>
+                                    <size key="estimatedItemSize" width="88" height="34"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tabCell" id="GDF-Td-WlC" customClass="TabsCollectionViewCell" customModule="Browser" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="3" width="88" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="lNX-Pb-vc4">
+                                            <rect key="frame" x="0.0" y="0.0" width="88" height="34"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tab" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JN2-su-ei3">
+                                                    <rect key="frame" x="8" y="0.0" width="80" height="34"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="5ik-A5-Jot"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="JOe-T8-yru"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <viewLayoutGuide key="safeArea" id="poS-WZ-H3J"/>
+                                            <constraints>
+                                                <constraint firstItem="JN2-su-ei3" firstAttribute="centerX" secondItem="lNX-Pb-vc4" secondAttribute="centerX" constant="4" id="R6m-2Y-E1z"/>
+                                                <constraint firstItem="JN2-su-ei3" firstAttribute="centerY" secondItem="lNX-Pb-vc4" secondAttribute="centerY" id="fxc-nX-UZE"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="lNX-Pb-vc4" firstAttribute="top" secondItem="GDF-Td-WlC" secondAttribute="topMargin" constant="-8" id="1it-bn-ZJd"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="lNX-Pb-vc4" secondAttribute="trailing" constant="-8" id="3ID-to-0dJ"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="lNX-Pb-vc4" secondAttribute="bottom" constant="-8" id="ahK-Xs-xv2"/>
+                                            <constraint firstItem="lNX-Pb-vc4" firstAttribute="leading" secondItem="GDF-Td-WlC" secondAttribute="leadingMargin" constant="-8" id="pFx-QM-xsT"/>
+                                        </constraints>
+                                        <size key="customSize" width="88" height="34"/>
+                                        <connections>
+                                            <outlet property="tabTitle" destination="JN2-su-ei3" id="xSV-if-IKl"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uo1-zE-eQE">
+                                <rect key="frame" x="0.0" y="184" width="414" height="712"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open a new tab to start browsing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjb-0f-eRg">
+                                        <rect key="frame" x="48" y="344" width="318" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Qjb-0f-eRg" firstAttribute="centerX" secondItem="Uo1-zE-eQE" secondAttribute="centerX" id="Zco-1c-cIZ"/>
+                                    <constraint firstItem="Qjb-0f-eRg" firstAttribute="centerY" secondItem="Uo1-zE-eQE" secondAttribute="centerY" id="vlp-Nh-xPG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Uo1-zE-eQE" firstAttribute="top" secondItem="sYj-BF-3PW" secondAttribute="bottom" constant="2" id="5Fd-f2-1iP"/>
+                            <constraint firstItem="Uo1-zE-eQE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="9V2-DK-FOG"/>
+                            <constraint firstItem="Uo1-zE-eQE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DRA-s5-COB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uo1-zE-eQE" secondAttribute="trailing" id="HYl-xa-1KG"/>
+                            <constraint firstItem="sYj-BF-3PW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NE0-Dt-GxE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sYj-BF-3PW" secondAttribute="trailing" id="O0N-OP-O9G"/>
                             <constraint firstItem="90V-19-W9n" firstAttribute="leading" secondItem="itq-L8-0XU" secondAttribute="trailing" constant="5" id="VdW-NT-gQH"/>
+                            <constraint firstItem="sYj-BF-3PW" firstAttribute="top" secondItem="itq-L8-0XU" secondAttribute="bottom" constant="8" symbolic="YES" id="Wwn-WP-svk"/>
                             <constraint firstItem="itq-L8-0XU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="abs-ZW-mvF"/>
                             <constraint firstItem="itq-L8-0XU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="13" id="fG2-tB-UhW"/>
                             <constraint firstItem="90V-19-W9n" firstAttribute="centerY" secondItem="itq-L8-0XU" secondAttribute="centerY" constant="-3" id="j9b-xN-UIj"/>
@@ -51,10 +134,58 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ContainerView" destination="Uo1-zE-eQE" id="q0V-rw-yz4"/>
+                        <outlet property="noTabYetLabel" destination="Qjb-0f-eRg" id="dlQ-m5-u9s"/>
+                        <outlet property="tabsCollectionView" destination="sYj-BF-3PW" id="FeH-cb-JJS"/>
+                        <outlet property="urlTextField" destination="05n-Cf-5et" id="Eeu-RR-kwf"/>
+                        <segue destination="xXE-XP-dg6" kind="show" identifier="goToBookmarks" id="Sxl-kq-4ge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847.82608695652175" y="116.51785714285714"/>
+            <point key="canvasLocation" x="851" y="123"/>
+        </scene>
+        <!--Bookmarks View Controller-->
+        <scene sceneID="tK4-oD-RaC">
+            <objects>
+                <viewController id="xXE-XP-dg6" customClass="BookmarksViewController" customModule="Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K4P-Hc-lXV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HD4-aZ-vho">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pDB-DD-DcR">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pDB-DD-DcR" id="Cd5-MY-aqu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xAC-ee-sRD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HD4-aZ-vho" firstAttribute="top" secondItem="xAC-ee-sRD" secondAttribute="top" id="8tw-FP-Ggz"/>
+                            <constraint firstItem="HD4-aZ-vho" firstAttribute="bottom" secondItem="K4P-Hc-lXV" secondAttribute="bottom" id="FmC-Eq-LtM"/>
+                            <constraint firstItem="HD4-aZ-vho" firstAttribute="leading" secondItem="xAC-ee-sRD" secondAttribute="leading" id="VrB-KE-BaC"/>
+                            <constraint firstItem="xAC-ee-sRD" firstAttribute="trailing" secondItem="HD4-aZ-vho" secondAttribute="trailing" id="wlh-VL-kuI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WOR-tv-d0n"/>
+                    <connections>
+                        <outlet property="bookmarksTableView" destination="HD4-aZ-vho" id="tg2-tJ-utu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4uV-8w-YXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511.5942028985507" y="122.54464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3ik-e7-kmC">
