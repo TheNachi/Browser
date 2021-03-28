@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class BrowserViewController: UIViewController {
+class BrowserViewController: BaseViewController {
     @IBOutlet weak var tabsCollectionView: UICollectionView!
     @IBOutlet weak var ContainerView: UIView!
     @IBOutlet weak var noTabYetLabel: UILabel!
@@ -27,7 +27,7 @@ class BrowserViewController: UIViewController {
 
     @IBAction func addNewTabs(_ sender: UIButton) {
         guard let vModel = viewModel else { return }
-        let newTab = TabModel(with: String(vModel.getTabCount()+1), webView: WKWebView(), url: "https://")
+        let newTab = TabModel(with: String(vModel.getTabCount()+1), webView: WKWebView(), url: "https://google.com")
         vModel.updateArrayOfTabs(with: newTab)
         self.noTabYetLabel.isHidden = true
         tabsCollectionView.reloadData()
@@ -79,7 +79,12 @@ class BrowserViewController: UIViewController {
     
     @objc func bookMarkURL() {
         if let url = webView?.url?.absoluteString {
-            Bookmark.shared.bookmarkWebsite(string: url)
+            let bookMarked = Bookmark.shared.bookmarkWebsite(string: url)
+            if bookMarked {
+                self.correctDisplayAlert(title: "Success", message: "Successfully Bookmarked")
+            } else {
+                self.correctDisplayAlert(title: "Error", message: "Has already been bookmarked")
+            }
         }
     }
     
@@ -90,11 +95,15 @@ class BrowserViewController: UIViewController {
     @objc func openWebsite() {
         guard let vModel = self.viewModel else { return }
         if var stringTyped = urlTextField.text {
-            guard let url = URL(string: stringTyped.fixMissingScheme()) else { return }
-            if let index = vModel.getCurrentTabIndex() {
-                vModel.getCurrentTab(index: index).url = stringTyped
+            if stringTyped != "" && stringTyped != "https://" {
+                guard let url = URL(string: stringTyped.fixMissingScheme()) else { return }
+                if let index = vModel.getCurrentTabIndex() {
+                    vModel.getCurrentTab(index: index).url = stringTyped
+                }
+                webView?.load(URLRequest(url: url))
+            } else {
+                self.correctDisplayAlert(title: "Error", message: "Please ensure you've entered a website and you've opened a new tab")
             }
-            webView?.load(URLRequest(url: url))
         }
     }
     
@@ -137,6 +146,10 @@ extension BrowserViewController: WKNavigationDelegate {
         if let index = vModel.getCurrentTabIndex() {
             vModel.getCurrentTab(index: index).url = webView.url?.absoluteString
         }
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        self.correctDisplayAlert(title: "Error", message: "There was a problem loading your website, please confirm it's the correct url and try again")
     }
 }
 

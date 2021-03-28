@@ -22,6 +22,9 @@
 		B64A88B92610F18000751C1C /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88B82610F18000751C1C /* TabModel.swift */; };
 		B64A88BE26111E4E00751C1C /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88BD26111E4E00751C1C /* Bookmark.swift */; };
 		B64A88C32611236A00751C1C /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88C22611236A00751C1C /* BookmarksViewController.swift */; };
+		B64A88CB2611261900751C1C /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88CA2611261900751C1C /* BookmarksViewModel.swift */; };
+		B64A88E926112DA200751C1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88E826112DA200751C1C /* BaseViewController.swift */; };
+		B6AD9DCD26113FCF00E5799B /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		B64A88B82610F18000751C1C /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		B64A88BD26111E4E00751C1C /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		B64A88C22611236A00751C1C /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		B64A88CA2611261900751C1C /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		B64A88E826112DA200751C1C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		B64A885F2610DBCF00751C1C /* Browser */ = {
 			isa = PBXGroup;
 			children = (
+				B64A88E726112D7F00751C1C /* BaseClasses */,
 				B64A88B72610F15500751C1C /* Models */,
 				B64A88982610DD3500751C1C /* App */,
 				B64A88972610DD2700751C1C /* View Models */,
@@ -184,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				B64A889C2610E0F400751C1C /* BrowserViewModel.swift */,
+				B64A88CA2611261900751C1C /* BookmarksViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				B64A88AF2610E97500751C1C /* TabsCollectionViewCell.swift */,
+				B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -211,6 +220,14 @@
 				B64A88B82610F18000751C1C /* TabModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B64A88E726112D7F00751C1C /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B64A88E826112DA200751C1C /* BaseViewController.swift */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +360,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64A88E926112DA200751C1C /* BaseViewController.swift in Sources */,
+				B64A88CB2611261900751C1C /* BookmarksViewModel.swift in Sources */,
 				B64A88C32611236A00751C1C /* BookmarksViewController.swift in Sources */,
 				B64A88652610DBCF00751C1C /* BrowserViewController.swift in Sources */,
 				B64A88B92610F18000751C1C /* TabModel.swift in Sources */,
@@ -353,6 +372,7 @@
 				B64A88A72610E43400751C1C /* String+Extension.swift in Sources */,
 				B64A88632610DBCF00751C1C /* SceneDelegate.swift in Sources */,
 				B64A88BE26111E4E00751C1C /* Bookmark.swift in Sources */,
+				B6AD9DCD26113FCF00E5799B /* BookmarkTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

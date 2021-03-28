@@ -79,10 +79,10 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <constraints>
-                                            <constraint firstItem="lNX-Pb-vc4" firstAttribute="top" secondItem="GDF-Td-WlC" secondAttribute="topMargin" constant="-8" id="1it-bn-ZJd"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="lNX-Pb-vc4" secondAttribute="trailing" constant="-8" id="3ID-to-0dJ"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="lNX-Pb-vc4" secondAttribute="bottom" constant="-8" id="ahK-Xs-xv2"/>
-                                            <constraint firstItem="lNX-Pb-vc4" firstAttribute="leading" secondItem="GDF-Td-WlC" secondAttribute="leadingMargin" constant="-8" id="pFx-QM-xsT"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="lNX-Pb-vc4" secondAttribute="trailing" constant="-8" id="KvJ-Z4-3hF"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="lNX-Pb-vc4" secondAttribute="bottom" constant="-8" id="l6Y-LR-bDb"/>
+                                            <constraint firstItem="lNX-Pb-vc4" firstAttribute="top" secondItem="GDF-Td-WlC" secondAttribute="topMargin" constant="-8" id="wHe-gl-6qb"/>
+                                            <constraint firstItem="lNX-Pb-vc4" firstAttribute="leading" secondItem="GDF-Td-WlC" secondAttribute="leadingMargin" constant="-8" id="yca-dc-8Rp"/>
                                         </constraints>
                                         <size key="customSize" width="88" height="34"/>
                                         <connections>
@@ -158,13 +158,45 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pDB-DD-DcR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bookmarkCell" id="pDB-DD-DcR" customClass="BookmarkTableViewCell" customModule="Browser" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pDB-DD-DcR" id="Cd5-MY-aqu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5L-70-vab">
+                                                    <rect key="frame" x="369" y="9.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="lqz-Cg-e5m"/>
+                                                        <constraint firstAttribute="height" constant="25" id="w9h-Mb-yER"/>
+                                                    </constraints>
+                                                    <state key="normal" image="delete-icon"/>
+                                                    <connections>
+                                                        <action selector="deleteFromBookmark:" destination="pDB-DD-DcR" eventType="touchUpInside" id="gVA-1h-Q3M"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dku-qg-4pL">
+                                                    <rect key="frame" x="20" y="12" width="341" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="sgd-P9-uE9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="m5L-70-vab" firstAttribute="centerY" secondItem="Cd5-MY-aqu" secondAttribute="centerY" id="9mG-it-y2Z"/>
+                                                <constraint firstAttribute="trailing" secondItem="m5L-70-vab" secondAttribute="trailing" constant="20" symbolic="YES" id="WRl-bN-w6N"/>
+                                                <constraint firstItem="dku-qg-4pL" firstAttribute="leading" secondItem="Cd5-MY-aqu" secondAttribute="leading" constant="20" symbolic="YES" id="a49-XI-tmQ"/>
+                                                <constraint firstItem="m5L-70-vab" firstAttribute="leading" secondItem="dku-qg-4pL" secondAttribute="trailing" constant="8" symbolic="YES" id="wkb-3C-z0J"/>
+                                                <constraint firstItem="dku-qg-4pL" firstAttribute="centerY" secondItem="Cd5-MY-aqu" secondAttribute="centerY" id="zcw-Ao-I9A"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bookmarkLabel" destination="dku-qg-4pL" id="rPZ-re-lvi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -185,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uV-8w-YXX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511.5942028985507" y="122.54464285714285"/>
+            <point key="canvasLocation" x="1611.5942028985507" y="122.54464285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3ik-e7-kmC">
@@ -207,6 +239,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="delete-icon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
