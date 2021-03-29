@@ -13,11 +13,19 @@
 		B64A88682610DBCF00751C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64A88662610DBCF00751C1C /* Main.storyboard */; };
 		B64A886A2610DBD000751C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64A88692610DBD000751C1C /* Assets.xcassets */; };
 		B64A886D2610DBD000751C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64A886B2610DBD000751C1C /* LaunchScreen.storyboard */; };
-		B64A88782610DBD000751C1C /* BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88772610DBD000751C1C /* BrowserTests.swift */; };
+		B64A88782610DBD000751C1C /* BrowserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88772610DBD000751C1C /* BrowserViewModelTests.swift */; };
 		B64A88832610DBD100751C1C /* BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88822610DBD100751C1C /* BrowserUITests.swift */; };
 		B64A889D2610E0F400751C1C /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A889C2610E0F400751C1C /* BrowserViewModel.swift */; };
 		B64A88A22610E42700751C1C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88A12610E42700751C1C /* UIView+Extension.swift */; };
 		B64A88A72610E43400751C1C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88A62610E43400751C1C /* String+Extension.swift */; };
+		B64A88B02610E97500751C1C /* TabsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88AF2610E97500751C1C /* TabsCollectionViewCell.swift */; };
+		B64A88B92610F18000751C1C /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88B82610F18000751C1C /* TabModel.swift */; };
+		B64A88BE26111E4E00751C1C /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88BD26111E4E00751C1C /* Bookmark.swift */; };
+		B64A88C32611236A00751C1C /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88C22611236A00751C1C /* BookmarksViewController.swift */; };
+		B64A88CB2611261900751C1C /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88CA2611261900751C1C /* BookmarksViewModel.swift */; };
+		B64A88E926112DA200751C1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88E826112DA200751C1C /* BaseViewController.swift */; };
+		B6AD9DCD26113FCF00E5799B /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */; };
+		B6AD9DE026114F6E00E5799B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD9DDF26114F6E00E5799B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +55,7 @@
 		B64A886C2610DBD000751C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B64A886E2610DBD000751C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64A88732610DBD000751C1C /* BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B64A88772610DBD000751C1C /* BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTests.swift; sourceTree = "<group>"; };
+		B64A88772610DBD000751C1C /* BrowserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModelTests.swift; sourceTree = "<group>"; };
 		B64A88792610DBD000751C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64A887E2610DBD100751C1C /* BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64A88822610DBD100751C1C /* BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserUITests.swift; sourceTree = "<group>"; };
@@ -55,6 +63,14 @@
 		B64A889C2610E0F400751C1C /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
 		B64A88A12610E42700751C1C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B64A88A62610E43400751C1C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B64A88AF2610E97500751C1C /* TabsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsCollectionViewCell.swift; sourceTree = "<group>"; };
+		B64A88B82610F18000751C1C /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		B64A88BD26111E4E00751C1C /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		B64A88C22611236A00751C1C /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		B64A88CA2611261900751C1C /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		B64A88E826112DA200751C1C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
+		B6AD9DDF26114F6E00E5799B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +121,8 @@
 		B64A885F2610DBCF00751C1C /* Browser */ = {
 			isa = PBXGroup;
 			children = (
+				B64A88E726112D7F00751C1C /* BaseClasses */,
+				B64A88B72610F15500751C1C /* Models */,
 				B64A88982610DD3500751C1C /* App */,
 				B64A88972610DD2700751C1C /* View Models */,
 				B64A88962610DD1900751C1C /* Views */,
@@ -118,7 +136,7 @@
 		B64A88762610DBD000751C1C /* BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				B64A88772610DBD000751C1C /* BrowserTests.swift */,
+				B64A88772610DBD000751C1C /* BrowserViewModelTests.swift */,
 				B64A88792610DBD000751C1C /* Info.plist */,
 			);
 			path = BrowserTests;
@@ -136,6 +154,8 @@
 		B64A88932610DCFC00751C1C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B64A88BD26111E4E00751C1C /* Bookmark.swift */,
+				B6AD9DDF26114F6E00E5799B /* Constants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -162,7 +182,9 @@
 		B64A88962610DD1900751C1C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B64A88AE2610E95E00751C1C /* Cells */,
 				B64A88642610DBCF00751C1C /* BrowserViewController.swift */,
+				B64A88C22611236A00751C1C /* BookmarksViewController.swift */,
 				B64A88662610DBCF00751C1C /* Main.storyboard */,
 			);
 			path = Views;
@@ -172,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				B64A889C2610E0F400751C1C /* BrowserViewModel.swift */,
+				B64A88CA2611261900751C1C /* BookmarksViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -183,6 +206,31 @@
 				B64A88622610DBCF00751C1C /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		B64A88AE2610E95E00751C1C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B64A88AF2610E97500751C1C /* TabsCollectionViewCell.swift */,
+				B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B64A88B72610F15500751C1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B64A88B82610F18000751C1C /* TabModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B64A88E726112D7F00751C1C /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B64A88E826112DA200751C1C /* BaseViewController.swift */,
+			);
+			path = BaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,12 +363,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64A88E926112DA200751C1C /* BaseViewController.swift in Sources */,
+				B64A88CB2611261900751C1C /* BookmarksViewModel.swift in Sources */,
+				B64A88C32611236A00751C1C /* BookmarksViewController.swift in Sources */,
 				B64A88652610DBCF00751C1C /* BrowserViewController.swift in Sources */,
+				B64A88B92610F18000751C1C /* TabModel.swift in Sources */,
 				B64A889D2610E0F400751C1C /* BrowserViewModel.swift in Sources */,
+				B64A88B02610E97500751C1C /* TabsCollectionViewCell.swift in Sources */,
 				B64A88612610DBCF00751C1C /* AppDelegate.swift in Sources */,
 				B64A88A22610E42700751C1C /* UIView+Extension.swift in Sources */,
 				B64A88A72610E43400751C1C /* String+Extension.swift in Sources */,
 				B64A88632610DBCF00751C1C /* SceneDelegate.swift in Sources */,
+				B6AD9DE026114F6E00E5799B /* Constants.swift in Sources */,
+				B64A88BE26111E4E00751C1C /* Bookmark.swift in Sources */,
+				B6AD9DCD26113FCF00E5799B /* BookmarkTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B64A88782610DBD000751C1C /* BrowserTests.swift in Sources */,
+				B64A88782610DBD000751C1C /* BrowserViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
