@@ -8,7 +8,7 @@
 import UIKit
 
 class TabsCollectionViewCell: UICollectionViewCell {
-    static let identifier = "tabCell"
+    static let identifier = Constants.tabCell.rawValue
     @IBOutlet weak var tabTitle: UILabel!
     
     func bindViewModel(with viewModel: TabCellViewModel) {

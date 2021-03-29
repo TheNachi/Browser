@@ -12,7 +12,7 @@ class BookmarksViewController: BaseViewController {
     private var viewModel: BookmarksViewModel?
     
     override func viewDidLoad() {
-        self.title = "Bookmarks"
+        self.title = Constants.Bookmarks.rawValue
         self.bookmarksTableView.delegate = self
         self.bookmarksTableView.dataSource = self
         self.viewModel = BookmarksViewModel()

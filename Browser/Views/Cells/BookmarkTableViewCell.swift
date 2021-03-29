@@ -8,7 +8,7 @@
 import UIKit
 
 class BookmarkTableViewCell: UITableViewCell {
-    static let identifier = "bookmarkCell"
+    static let identifier = Constants.bookmarkCell.rawValue
     @IBOutlet weak var bookmarkLabel: UILabel!
     private var viewModel: BookmarkCellViewModel?
     weak var delegate: CellDelegate?

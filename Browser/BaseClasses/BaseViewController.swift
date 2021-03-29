@@ -19,7 +19,7 @@ class BaseViewController: UIViewController {
         preferredStyle: UIAlertController.Style = .alert) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         if actions.isEmpty {
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let okAction = UIAlertAction(title: Constants.OK.rawValue, style: .default, handler: nil)
             alert.addAction(okAction)
         } else {
             actions.forEach { (action) in

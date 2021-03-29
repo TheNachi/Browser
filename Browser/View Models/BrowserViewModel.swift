@@ -28,7 +28,7 @@ class BrowserViewModel {
     }
     
     public func getTabCellViewModel(index: Int) -> TabCellViewModel {
-        let tabName = "Tab " + String(index + 1)
+        let tabName = Constants.Tab.rawValue + String(index + 1)
         return TabCellViewModel(tabName: tabName)
     }
     

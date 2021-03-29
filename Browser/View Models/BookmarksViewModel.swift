@@ -15,7 +15,7 @@ class BookmarksViewModel {
     }
     
     public func getSingleBookMark(index: Int) -> String {
-        return bookmarks?[index] ?? "You've not saved any website to bookmark yet!"
+        return bookmarks?[index] ?? Constants.noBookmarks.rawValue
     }
     
     public func getBookmarkCellViewModel(index: Int) -> BookmarkCellViewModel {

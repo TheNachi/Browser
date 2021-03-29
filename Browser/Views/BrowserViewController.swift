@@ -22,12 +22,12 @@ class BrowserViewController: BaseViewController {
         self.tabsCollectionView.delegate = self
         self.tabsCollectionView.dataSource = self
         self.viewModel = BrowserViewModel()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openWebsite))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Constants.Open.rawValue, style: .plain, target: self, action: #selector(openWebsite))
     }
 
     @IBAction func addNewTabs(_ sender: UIButton) {
         guard let vModel = viewModel else { return }
-        let newTab = TabModel(with: String(vModel.getTabCount()+1), webView: WKWebView(), url: "https://google.com")
+        let newTab = TabModel(with: String(vModel.getTabCount()+1), webView: WKWebView(), url: Constants.initialWebsite.rawValue)
         vModel.updateArrayOfTabs(with: newTab)
         self.noTabYetLabel.isHidden = true
         tabsCollectionView.reloadData()
@@ -81,15 +81,15 @@ class BrowserViewController: BaseViewController {
         if let url = webView?.url?.absoluteString {
             let bookMarked = Bookmark.shared.bookmarkWebsite(string: url)
             if bookMarked {
-                self.correctDisplayAlert(title: "Success", message: "Successfully Bookmarked")
+                self.correctDisplayAlert(title: Constants.Success.rawValue, message: Constants.successfully.rawValue)
             } else {
-                self.correctDisplayAlert(title: "Error", message: "Has already been bookmarked")
+                self.correctDisplayAlert(title: Constants.Error.rawValue, message: Constants.alreadyBookmarked.rawValue)
             }
         }
     }
     
     @objc func goToBookmarks() {
-        self.performSegue(withIdentifier: "goToBookmarks", sender: self)
+        self.performSegue(withIdentifier: Constants.goToBookmarks.rawValue, sender: self)
     }
     
     @objc func openWebsite() {
@@ -102,13 +102,13 @@ class BrowserViewController: BaseViewController {
                 }
                 webView?.load(URLRequest(url: url))
             } else {
-                self.correctDisplayAlert(title: "Error", message: "Please ensure you've entered a website and you've opened a new tab")
+                self.correctDisplayAlert(title: Constants.Error.rawValue, message: Constants.noTab.rawValue)
             }
         }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress" {
+        if keyPath == Constants.estimatedProgress.rawValue {
             self.progressView.progress = Float(webView?.estimatedProgress ?? 0)
         }
     }
@@ -149,7 +149,7 @@ extension BrowserViewController: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        self.correctDisplayAlert(title: "Error", message: "There was a problem loading your website, please confirm it's the correct url and try again")
+        self.correctDisplayAlert(title: Constants.Error.rawValue, message: Constants.problemLoadingError.rawValue)
     }
 }
 

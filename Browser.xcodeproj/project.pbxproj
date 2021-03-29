@@ -13,7 +13,7 @@
 		B64A88682610DBCF00751C1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64A88662610DBCF00751C1C /* Main.storyboard */; };
 		B64A886A2610DBD000751C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64A88692610DBD000751C1C /* Assets.xcassets */; };
 		B64A886D2610DBD000751C1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64A886B2610DBD000751C1C /* LaunchScreen.storyboard */; };
-		B64A88782610DBD000751C1C /* BrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88772610DBD000751C1C /* BrowserTests.swift */; };
+		B64A88782610DBD000751C1C /* BrowserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88772610DBD000751C1C /* BrowserViewModelTests.swift */; };
 		B64A88832610DBD100751C1C /* BrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88822610DBD100751C1C /* BrowserUITests.swift */; };
 		B64A889D2610E0F400751C1C /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A889C2610E0F400751C1C /* BrowserViewModel.swift */; };
 		B64A88A22610E42700751C1C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88A12610E42700751C1C /* UIView+Extension.swift */; };
@@ -25,6 +25,7 @@
 		B64A88CB2611261900751C1C /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88CA2611261900751C1C /* BookmarksViewModel.swift */; };
 		B64A88E926112DA200751C1C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64A88E826112DA200751C1C /* BaseViewController.swift */; };
 		B6AD9DCD26113FCF00E5799B /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */; };
+		B6AD9DE026114F6E00E5799B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AD9DDF26114F6E00E5799B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,7 @@
 		B64A886C2610DBD000751C1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B64A886E2610DBD000751C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64A88732610DBD000751C1C /* BrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B64A88772610DBD000751C1C /* BrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserTests.swift; sourceTree = "<group>"; };
+		B64A88772610DBD000751C1C /* BrowserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModelTests.swift; sourceTree = "<group>"; };
 		B64A88792610DBD000751C1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64A887E2610DBD100751C1C /* BrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64A88822610DBD100751C1C /* BrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserUITests.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		B64A88CA2611261900751C1C /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		B64A88E826112DA200751C1C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B6AD9DCC26113FCF00E5799B /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
+		B6AD9DDF26114F6E00E5799B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,7 @@
 		B64A88762610DBD000751C1C /* BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				B64A88772610DBD000751C1C /* BrowserTests.swift */,
+				B64A88772610DBD000751C1C /* BrowserViewModelTests.swift */,
 				B64A88792610DBD000751C1C /* Info.plist */,
 			);
 			path = BrowserTests;
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				B64A88BD26111E4E00751C1C /* Bookmark.swift */,
+				B6AD9DDF26114F6E00E5799B /* Constants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				B64A88A22610E42700751C1C /* UIView+Extension.swift in Sources */,
 				B64A88A72610E43400751C1C /* String+Extension.swift in Sources */,
 				B64A88632610DBCF00751C1C /* SceneDelegate.swift in Sources */,
+				B6AD9DE026114F6E00E5799B /* Constants.swift in Sources */,
 				B64A88BE26111E4E00751C1C /* Bookmark.swift in Sources */,
 				B6AD9DCD26113FCF00E5799B /* BookmarkTableViewCell.swift in Sources */,
 			);
@@ -380,7 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B64A88782610DBD000751C1C /* BrowserTests.swift in Sources */,
+				B64A88782610DBD000751C1C /* BrowserViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
